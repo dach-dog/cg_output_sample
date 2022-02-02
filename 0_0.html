@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lessons3dcg</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js" defer></script>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+  </head>
+
+  <body>
+    <header class="h-12 bg-blue-800 flex items-center px-3">
+  <img src="assets/img/logo_w.png" alt="logo" class="h-8 mr-5">
+  <p class="text-white font-bold text-xl">デジタルデザインスタジオ：入門編</p>
+</header>
+
+<main class="flex">
+  <article class="w-9/12">
+    <section class="video-box">
+      <iframe class="video" src="https://www.youtube.com/embed/IzZaKSCRI1M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
+    <section class="p-5" x-data="{open_tab: 'content_text'}">
+      <div class="border-b py-2">
+        <span @click="open_tab = 'content_text'" class="py-2 px-4 font-bold border-r" :class="open_tab=='content_text' ? 'text-black' : 'text-gray-300'">テキスト</span>
+        <span @click="open_tab = 'preview_cg'" class="py-2 px-4 font-bold border-r" :class="open_tab=='preview_cg' ? 'text-black' : 'text-gray-300'">プレビュー</span>
+        <span @click="open_tab = 'sample_file'" class="py-2 px-4 font-bold" :class="open_tab=='sample_file' ? 'text-black' : 'text-gray-300'">サンプルファイル</span>
+      </div>
+      
+      <div class="py-6 px-4" id="content_text" x-show="open_tab=='content_text'">
+        <h2>授業概要</h2>
+
+<p>あああああああああ<br/>
+あああああああ<br/>
+ああああああああああ</p>
+
+<h2>次回の内容</h2>
+
+<p>いいいいいいいいいい<br/>
+いいいいいいいいいいいい<br/>
+いいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいい</p>
+
+<blockquote>
+<p>※注意<br/>
+うううううううううううう</p>
+</blockquote>
+
+<h2>その次</h2>
+
+<p>ええええええええええええええええええ<br/>
+えええええ</p>
+
+<p>ええええええええええ</p>
+
+      </div>
+      <div class="py-6 px-4" id="preview_cg" x-show="open_tab=='preview_cg'">
+        <model-viewer id="reveal" loading="eager" style="width:400px;height:500px;" camera-controls auto-rotate src="assets/cg/free_car/scene.gltf" alt="A 3D model of a shishkebab"></model-viewer>
+      </div>
+      <div class="py-6 px-4" id="sample_file" x-show="open_tab=='sample_file'">
+        サンプルファイルだよ
+      </div>
+    </section>
+  </article>
+  <aside class="w-3/12">
+    <ol>
+        <li>
+  <p class="h-14 px-2 bg-gray-300 flex items-center border-b">デジタルデザインの環境構築</p>
+    <li>
+  <p class="h-14 px-2 bg-gray-200 flex items-center border-b">PCのセットアップ</p>
+    <li>
+  <p class="h-12 px-2 bg-gray-100 flex items-center border-b">windows向け</p>
+</li>
+</li>
+</li>
+    </ol>
+  </aside>
+</main>
+
+<style>
+  .video-box{
+    position: relative;
+  }
+  .video-box::before {
+    content: "";
+    display: block;
+    padding-top: 50%;
+  }
+  .video-box .video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  #content_text h2{
+    font-weight: bold;
+    font-size: 1.25rem;
+    margin-top: 20px;
+  }
+  #content_text blockquote{
+    font-size: 0.85rem;
+    padding: 5px 10px;
+    margin: 5px;
+    background-color: #dcdcdc;
+  }
+  model-viewer#reveal {
+    --poster-color: transparent;
+  }
+</style>
+</body>
+</html>
